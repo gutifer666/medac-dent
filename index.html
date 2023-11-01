@@ -15,7 +15,7 @@
 
     <!-- Formulario para añadir/modificar citas -->
     <section>
-        <form id="citas-form">
+        <form id="citas-form" action="#" >
             <!-- Fecha y hora de la cita -->
             <label for="fecha">Fecha de la Cita:</label>
             <input type="date" id="fecha" name="fecha" required>
@@ -38,7 +38,7 @@
             <label for="observaciones">Observaciones:</label>
             <textarea id="observaciones" name="observaciones" rows="4" placeholder="Escribe aquí cualquier observación..."></textarea>
 
-            <button type="submit">Guardar Cita</button>
+            <button type="button" id="agregar-cita">Agregar Cita</button>
         </form>
     </section>
 
@@ -58,20 +58,9 @@
                 <th>Acciones</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody id="citas-tbody">
             <!-- Las filas de la tabla serán añadidas dinámicamente por JavaScript -->
-            <!-- Ejemplo de fila -->
-            <tr>
-                <td>01/11/2023</td>
-                <td>10:30</td>
-                <td>Juan</td>
-                <td>Pérez</td>
-                <td>12345678A</td>
-                <td>987654321</td>
-                <td>15/04/1980</td>
-                <td>Primera visita</td>
-                <td><button type="button">Editar</button> <button type="button">Eliminar</button></td>
-            </tr>
+
             </tbody>
         </table>
     </section>
