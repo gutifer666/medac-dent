@@ -1,0 +1,11 @@
+{
+  "name": "medac-dent",
+  "version": "1.0.0",
+  "description": "Administración de citas de una clínica dental.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Javier Gutiérrez",
+  "license": "ISC"
+}
