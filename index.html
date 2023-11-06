@@ -15,30 +15,30 @@
 
     <!-- Formulario para añadir/modificar citas -->
     <section>
-        <form id="citas-form" action="#" >
+        <form action="" id="citas-form" name="myForm" method="post">
             <!-- Fecha y hora de la cita -->
             <label for="fecha">Fecha de la Cita:</label>
-            <input type="date" id="fecha" name="fecha" required>
+            <input type="date" id="fecha" name="fecha">
             <label for="hora">Hora de la Cita:</label>
-            <input type="time" id="hora" name="hora" required>
+            <input type="time" id="hora" name="hora">
 
             <!-- Datos del paciente -->
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
-            <label for="apellidos">Apellidos:</label>
-            <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" required>
+            <label for="nombre">Nombre: <span class="error" id="errorName"></span></label>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+            <label for="apellidos">Apellidos: <span class="error" id="errorSurname"></span></label>
+            <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos">
             <label for="dni">DNI:</label>
-            <input type="text" id="dni" name="dni" placeholder="DNI" required>
+            <input type="text" id="dni" name="dni" placeholder="DNI">
             <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono">
             <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
-            <input type="date" id="fecha-nacimiento" name="fecha_nacimiento" required>
+            <input type="date" id="fecha-nacimiento" name="fecha_nacimiento">
 
             <!-- Observaciones -->
             <label for="observaciones">Observaciones:</label>
             <textarea id="observaciones" name="observaciones" rows="4" placeholder="Escribe aquí cualquier observación..."></textarea>
 
-            <button type="button" id="agregar-cita">Agregar Cita</button>
+            <input type="submit" id="agregar-cita" value="Agendar Cita">
         </form>
     </section>
 

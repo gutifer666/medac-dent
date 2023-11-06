@@ -1,6 +1,7 @@
 {
   "name": "medac-dent",
   "version": "1.0.0",
+  "type": "module",
   "description": "Administración de citas de una clínica dental.",
   "main": "index.js",
   "scripts": {
