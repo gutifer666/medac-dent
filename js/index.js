@@ -23,3 +23,41 @@ function validateSurname(event) {
 let form = document.getElementById('citas-form');
 form.addEventListener('submit', validateName);
 form.addEventListener('submit', validateSurname);
+
+// Almacenamiento de datos en el navegador
+function saveData(event) {
+    localStorage.setItem('nombre', document.getElementById('nombre').value);
+    localStorage.setItem('apellidos', document.getElementById('apellidos').value);
+    localStorage.setItem('dni', document.getElementById('dni').value);
+    localStorage.setItem('telefono', document.getElementById('telefono').value);
+    localStorage.setItem('fecha-nacimiento', document.getElementById('fecha-nacimiento').value);
+    event.preventDefault(); // Detiene el envío del formulario
+}
+function addToTable() {
+    const tbody = document.getElementById('citas-tbody');
+    const tr = document.createElement('tr');
+    const campos = ['nombre', 'apellidos', 'dni', 'telefono', 'fecha-nacimiento'];
+    for (let campo of campos) {
+        const td = document.createElement('td');
+        td.textContent = localStorage.getItem(campo);
+        tr.appendChild(td);
+    }
+    // Añadir botones de acción
+    const tdAcciones = document.createElement('td');
+    const btnEditar = document.createElement('button');
+    btnEditar.textContent = 'Editar';
+    const btnEliminar = document.createElement('button');
+    btnEliminar.textContent = 'Eliminar';
+    tdAcciones.appendChild(btnEditar);
+    tdAcciones.appendChild(btnEliminar);
+    tr.appendChild(tdAcciones);
+    tbody.appendChild(tr);
+}
+function addCita(event) {
+    saveData(event);
+    addToTable();
+}
+ if (document.getElementById('citas-form') != null) {
+    document.getElementById('citas-form').addEventListener('submit', addCita);
+}
+
