@@ -1,79 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>MedacDent</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/estilos.css">
+    <title>Medac Dent</title>
 </head>
 <body>
-    <!-- Cabecera -->
-    <header>
-        <img src="img/diente-moderno.png" alt="Logo de la Clínica" width="100" >
-        <h1>MedacDent</h1>
-    </header>
 
-    <!-- Formulario para añadir/modificar citas -->
-    <section>
-        <form action="" id="citas-form" name="myForm" method="post">
-            <!-- Fecha y hora de la cita -->
-            <label for="fecha">Fecha de la Cita:</label>
-            <input type="date" id="fecha" name="fecha">
-            <label for="hora">Hora de la Cita:</label>
-            <input type="time" id="hora" name="hora">
-
-            <!-- Datos del paciente -->
-            <label for="nombre">Nombre: <span class="error" id="errorName"></span></label>
-            <input type="text" id="nombre" name="nombre" placeholder="Nombre">
-            <label for="apellidos">Apellidos: <span class="error" id="errorSurname"></span></label>
-            <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos">
-            <label for="dni">DNI:</label>
-            <input type="text" id="dni" name="dni" placeholder="DNI">
-            <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono">
-            <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
-            <input type="date" id="fecha-nacimiento" name="fecha_nacimiento">
-
-            <!-- Observaciones -->
-            <label for="observaciones">Observaciones:</label>
-            <textarea id="observaciones" name="observaciones" rows="4" placeholder="Escribe aquí cualquier observación..."></textarea>
-
-            <input type="submit" id="agregar-cita" value="Agendar Cita">
-        </form>
-    </section>
-
-    <!-- Tabla para mostrar las citas -->
-    <section>
-        <table id="citas-tabla">
-            <thead>
-            <tr>
-                <th>Fecha</th>
-                <th>Hora</th>
-                <th>Nombre</th>
-                <th>Apellidos</th>
-                <th>DNI</th>
-                <th>Teléfono</th>
-                <th>Fecha de Nacimiento</th>
-                <th>Observaciones</th>
-                <th>Acciones</th>
-            </tr>
-            </thead>
-            <tbody id="citas-tbody">
-            <!-- Las filas de la tabla serán añadidas dinámicamente por JavaScript -->
-
-            </tbody>
-        </table>
-    </section>
-
-    <!-- Pie de página -->
-    <footer>
-        <address>
-            Dirección de la Clínica: Calle Larios 42, Málaga, España<br>
-            Teléfono: 952 20-21-22<br>
-            Email: malaga@medacdent.com
-        </address>
-    </footer>
-    <!-- JS -->
-    <script src="js/index.js"></script>
 </body>
 </html>
