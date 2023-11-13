@@ -1,10 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Medac Dent</title>
+    <title>MedacDent - Gestión de Citas</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js"></script>
 </head>
 <body>
+<header>
+    <div class="header-container">
+        <img src="assets/images/logo.png" alt="Logo MedacDent" class="logo">
+        <h1>MedacDent - Gestión de Citas</h1>
+    </div>
+</header>
 
+<main>
+    <section class="formulario-citas">
+        <h2>Agregar/Modificar Cita</h2>
+        <form id="formularioCita">
+            <input type="datetime-local" id="fechaCita" name="fechaCita" placeholder="Fecha de la cita" required>
+            <input type="text" id="nombrePaciente" name="nombrePaciente" placeholder="Nombre del paciente" required>
+            <input type="text" id="dniPaciente" name="dniPaciente" placeholder="DNI del paciente" required>
+            <input type="text" id="apellidosPaciente" name="apellidosPaciente" placeholder="Apellidos del paciente"
+                   required>
+            <input type="tel" id="telefonoPaciente" name="telefonoPaciente" placeholder="Teléfono del paciente"
+                   required>
+            <input type="date" id="fechaNacimientoPaciente" name="fechaNacimientoPaciente"
+                   placeholder="Fecha de nacimiento" required>
+            <textarea id="observaciones" name="observaciones" placeholder="Observaciones"></textarea>
+            <button type="submit">Guardar Cita</button>
+        </form>
+    </section>
+    <section class="tabla-citas">
+        <h2>Citas Programadas</h2>
+        <table id="tablaCitas">
+            <thead>
+            <tr>
+                <th>Orden</th>
+                <th>Fecha</th>
+                <th>Nombre</th>
+                <th>DNI</th>
+                <th>Apellidos</th>
+                <th>Teléfono</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Observaciones</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Las filas de la tabla se llenarán dinámicamente con JavaScript -->
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2023 MedacDent - Todos los derechos reservados</p>
+        <p>Contacto: info@medacdent.com | Teléfono: 123-456-789</p>
+    </div>
+</footer>
 </body>
 </html>

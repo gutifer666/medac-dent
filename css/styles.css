@@ -1,0 +1,91 @@
+header {
+    background-color: #f8f8f8; /* Color de fondo del header */
+    padding: 10px 0; /* Espaciado interno en el header */
+    text-align: center; /* Centrar contenido */
+    border-bottom: 2px solid #e0e0e0; /* Borde inferior para separar del contenido principal */
+}
+
+.header-container {
+    width: 80%;
+    margin: 0 auto; /* Centrar el contenedor en la página */
+    display: flex; /* Uso de flexbox para alinear elementos */
+    align-items: center; /* Alineación vertical de los elementos */
+    justify-content: center; /* Alineación horizontal de los elementos */
+}
+
+.logo {
+    height: 60px; /* Altura del logo */
+    margin-right: 20px; /* Espaciado a la derecha del logo */
+}
+
+header h1 {
+    font-size: 1.5em; /* Tamaño de la fuente para el título */
+    color: #333; /* Color del texto */
+    margin: 0; /* Remover márgenes predeterminados */
+}
+/* Footer */
+footer {
+    background-color: #333; /* Color de fondo del footer */
+    color: white; /* Color del texto */
+    padding: 20px 0; /* Espaciado interno en el footer */
+    text-align: center; /* Centrar el contenido */
+}
+
+.footer-container {
+    width: 80%;
+    margin: 0 auto; /* Centrar el contenedor en la página */
+}
+
+footer p {
+    margin: 5px 0; /* Espaciado vertical para los párrafos */
+    font-size: 0.9em; /* Tamaño de la fuente */
+}
+/* Contenido principal */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto; /* Centrar el contenido */
+}
+
+.formulario-citas, .tabla-citas {
+    margin-bottom: 40px;
+}
+
+form#formularioCita {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre los campos del formulario */
+}
+
+form#formularioCita input, form#formularioCita button {
+    padding: 10px;
+    font-size: 1em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Elimina el espacio entre las celdas */
+}
+
+table, th, td {
+    border: 1px solid #ddd; /* Bordes de la tabla y celdas */
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4; /* Color de fondo para los encabezados de la tabla */
+}
+/* Validaciones de citas */
+.error {
+    border-color: red; /* Resalta el borde de campos con errores */
+}
+
+.error-mensaje {
+    color: red; /* Color del mensaje de error */
+    font-size: 0.8em; /* Tamaño de fuente para el mensaje de error */
+    margin-top: 5px; /* Espaciado superior para el mensaje de error */
+}
