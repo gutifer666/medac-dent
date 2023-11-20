@@ -52,8 +52,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Si todas las validaciones son correctas, proceder con el guardado de la cita
-        // ...
+        let cita = new Cita(fechaCita.value, nombrePaciente.value, dniPaciente.value, apellidosPaciente.value, telefonoPaciente.value, fechaNacimientoPaciente.value, observaciones.value);
+        agregarCita(cita);
+        mostrarCitas();
     });
+    mostrarCitas(); // Mostrar las citas existentes al cargar la página
 
     function mostrarError(campo, mensaje) {
         // Resaltar campo con error
@@ -95,3 +98,76 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+/* Gestión de Citas */
+class Cita {
+    constructor(fechaCita, nombrePaciente, dniPaciente, apellidosPaciente, telefonoPaciente, fechaNacimientoPaciente, observaciones) {
+        this.id = Date.now(); // Identificador único basado en el timestamp
+        this.fechaCita = fechaCita;
+        this.nombrePaciente = nombrePaciente;
+        this.dniPaciente = dniPaciente;
+        this.apellidosPaciente = apellidosPaciente;
+        this.telefonoPaciente = telefonoPaciente;
+        this.fechaNacimientoPaciente = fechaNacimientoPaciente;
+        this.observaciones = observaciones;
+    }
+}
+/* Funciones para manejar citas */
+function agregarCita(cita) {
+    let citas = obtenerCitas();
+    citas.push(cita);
+    localStorage.setItem('citas', JSON.stringify(citas));
+}
+
+function obtenerCitas() {
+    let citasGuardadas = localStorage.getItem('citas');
+    if (citasGuardadas) {
+        return JSON.parse(citasGuardadas);
+    }
+    return [];
+}
+function mostrarCitas() {
+    let citas = obtenerCitas();
+    let tablaCitas = document.getElementById('tablaCitas').getElementsByTagName('tbody')[0];
+    tablaCitas.innerHTML = ''; // Limpiar tabla existente
+
+    citas.forEach((cita, index) => {
+        let fila = tablaCitas.insertRow();
+        fila.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${cita.fechaCita}</td>
+            <td>${cita.nombrePaciente}</td>
+            <td>${cita.dniPaciente}</td>
+            <td>${cita.apellidosPaciente}</td>
+            <td>${cita.telefonoPaciente}</td>
+            <td>${cita.fechaNacimientoPaciente}</td>
+            <td>${cita.observaciones}</td>
+            <td>
+                <button onclick="eliminarCita(${cita.id})">Eliminar</button>
+                <button onclick="cargarCita(${cita.id})">Modificar</button>
+            </td>
+        `;
+    });
+}
+function eliminarCita(idCita) {
+    let citas = obtenerCitas();
+    citas = citas.filter(cita => cita.id !== idCita);
+    localStorage.setItem('citas', JSON.stringify(citas));
+    mostrarCitas(); // Actualizar la vista
+}
+
+function cargarCita(idCita) {
+    let citas = obtenerCitas();
+    let cita = citas.find(cita => cita.id === idCita);
+    if (cita) {
+        // Cargar los datos de la cita en el formulario para su edición
+        document.getElementById('fechaCita').value = cita.fechaCita;
+        // Continuar con el resto de campos...
+        document.getElementById('nombrePaciente').value = cita.nombrePaciente;
+        document.getElementById('dniPaciente').value = cita.dniPaciente;
+        document.getElementById('apellidosPaciente').value = cita.apellidosPaciente;
+        document.getElementById('telefonoPaciente').value = cita.telefonoPaciente;
+        document.getElementById('fechaNacimientoPaciente').value = cita.fechaNacimientoPaciente;
+        document.getElementById('observaciones').value = cita.observaciones;
+    }
+}
+
